@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ProductoCard({ producto, agregarAlCarrito }) {
+  const navigate = useNavigate(); 
+
   if (!producto) return null;
 
   return (
-    <div className="card h-100 bg-card-custom text-white border-secondary card-hover">
+    <div 
+      className="card h-100 bg-card-custom text-white border-secondary card-hover"
+      style={{ cursor: 'pointer' }}
+      onClick={() => navigate(`/producto/${producto.id}`)}
+    >
       <div style={{ height: '200px', overflow: 'hidden' }} className="p-3 position-relative">
         {producto.stock === 0 && (
           <span className="position-absolute top-0 start-0 m-3 badge bg-danger">Sin stock</span>
@@ -20,8 +26,7 @@ function ProductoCard({ producto, agregarAlCarrito }) {
         <span className="badge bg-secondary mb-2 align-self-start">{producto.categoria}</span>
         <h5 className="card-title fw-bold">{producto.nombre}</h5>
         <p className="card-text text-secondary small mb-4">{producto.descripcion.substring(0, 50)}...</p>
-        
-        <div className="mt-auto d-flex justify-content-between align-items-center">
+        <div className="mt-auto d-flex justify-content-between align-items-center" onClick={(e) => e.stopPropagation()}>
           <span className="fs-5 fw-bold text-accent">${producto.precio.toLocaleString('es-AR')}</span>
           <div>
             <Link to={`/producto/${producto.id}`} className="btn btn-sm btn-outline-light me-2">
@@ -42,3 +47,4 @@ function ProductoCard({ producto, agregarAlCarrito }) {
 }
 
 export default ProductoCard;
+
