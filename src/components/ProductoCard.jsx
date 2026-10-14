@@ -32,14 +32,16 @@ function ProductoCard({ producto, agregarAlCarrito }) {
             <Link to={`/producto/${producto.id}`} className="btn btn-sm btn-outline-light me-2">
               Ver
             </Link>
-            <button 
-              onClick={() => agregarAlCarrito(producto)} 
-              className={`btn btn-sm fw-bold ${producto.stock === 0 ? 'btn-secondary disabled' : 'btn-accent'}`}
-              disabled={producto.stock === 0}
-            >
-              {producto.stock === 0 ? 'No disponible' : '+'}
-            </button>
           </div>
+          
+          <button 
+            onClick={() => agregarAlCarrito(producto)} 
+            className={`btn w-100 fw-bold py-2 text-uppercase ${producto.stock === 0 ? 'btn-secondary disabled' : 'btn-accent'}`}
+            disabled={producto.stock === 0}
+            style={{ fontSize: '0.9rem', letterSpacing: '0.5px' }}
+          >
+            {producto.stock === 0 ? 'Sin Stock' : '🛒 Agregar al Carrito'}
+          </button>
         </div>
       </div>
     </div>
