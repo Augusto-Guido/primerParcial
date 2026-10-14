@@ -21,20 +21,22 @@ function ProductoCard({ producto, agregarAlCarrito }) {
         <h5 className="card-title fw-bold">{producto.nombre}</h5>
         <p className="card-text text-secondary small mb-4">{producto.descripcion.substring(0, 50)}...</p>
         
-        <div className="mt-auto d-flex justify-content-between align-items-center">
-          <span className="fs-5 fw-bold text-accent">${producto.precio.toLocaleString('es-AR')}</span>
-          <div>
-            <Link to={`/producto/${producto.id}`} className="btn btn-sm btn-outline-light me-2">
-              Ver
+        <div className="mt-auto">
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <span className="fs-5 fw-bold text-accent">${producto.precio.toLocaleString('es-AR')}</span>
+            <Link to={`/producto/${producto.id}`} className="btn btn-sm btn-outline-light">
+              Ver detalle
             </Link>
-            <button 
-              onClick={() => agregarAlCarrito(producto)} 
-              className={`btn btn-sm fw-bold ${producto.stock === 0 ? 'btn-secondary disabled' : 'btn-accent'}`}
-              disabled={producto.stock === 0}
-            >
-              {producto.stock === 0 ? 'No disponible' : '+'}
-            </button>
           </div>
+          
+          <button 
+            onClick={() => agregarAlCarrito(producto)} 
+            className={`btn w-100 fw-bold py-2 text-uppercase ${producto.stock === 0 ? 'btn-secondary disabled' : 'btn-accent'}`}
+            disabled={producto.stock === 0}
+            style={{ fontSize: '0.9rem', letterSpacing: '0.5px' }}
+          >
+            {producto.stock === 0 ? 'Sin Stock' : '🛒 Agregar al Carrito'}
+          </button>
         </div>
       </div>
     </div>

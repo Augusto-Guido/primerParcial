@@ -4,13 +4,12 @@
   --bg: #0b0b0f;
   --bg-card: #15151c;
   --bg-card-hover: #1c1c24;
-  --border: #2a2a35;
+  --border: #3f3f46;
   --accent: #ff3344;
   --accent-hover: #e02837;
   --sans: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Forzar fondo oscuro en toda la estructura base */
 html, body {
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ html, body {
   flex-direction: column;
 }
 
-/* Clases de utilidad gamer */
+/* Clases personalizadas */
 .bg-dark-custom { 
   background-color: var(--bg) !important; 
 }
@@ -42,23 +41,45 @@ html, body {
   color: var(--accent) !important; 
 }
 
+/* Botón de Agregar al Carrito (Rojo brillante con texto blanco visible siempre) */
 .btn-accent { 
-  background-color: var(--accent); 
-  color: white; 
-  border: none; 
+  background-color: var(--accent) !important; 
+  color: #ffffff !important; 
+  border: 1px solid var(--accent) !important;
+  font-weight: 600 !important;
   transition: background-color 0.2s ease;
 }
 
 .btn-accent:hover { 
-  background-color: var(--accent-hover); 
-  color: white; 
+  background-color: var(--accent-hover) !important; 
+  color: #ffffff !important; 
 }
 
-.border-accent { 
-  border-color: var(--accent) !important; 
+/* Botones de contorno (como Ver detalle y Filtros) con bordes y textos claros */
+.btn-outline-light {
+  color: #ffffff !important;
+  border-color: #71717a !important;
 }
 
-/* Efecto hover profesional para las tarjetas de hardware */
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  color: #0b0b0f !important;
+}
+
+/* Estilo para los botones de filtros de categoría */
+.btn-outline-secondary {
+  color: #f4f4f5 !important;
+  border-color: #52525b !important;
+  background-color: #18181b !important;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary.active {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+/* Tarjetas */
 .card-hover { 
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; 
 }
@@ -70,7 +91,7 @@ html, body {
   box-shadow: 0 10px 25px rgba(255, 51, 68, 0.15) !important; 
 }
 
-/* Animación suave para los carteles flotantes de stock */
+/* Animación de alerta */
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
@@ -80,15 +101,20 @@ html, body {
   animation: fadeIn 0.25s ease-out forwards;
 }
 
-/* Ajustes para que los formularios de Bootstrap combinen con el fondo oscuro */
+/* Buscador y inputs perfectamente visibles */
 .form-control, .form-select {
-  background-color: #101015 !important;
+  background-color: #18181b !important;
   color: #ffffff !important;
-  border-color: var(--border) !important;
+  border: 1px solid #52525b !important;
+}
+
+.form-control::placeholder {
+  color: #a1a1aa !important;
+  opacity: 1;
 }
 
 .form-control:focus, .form-select:focus {
-  background-color: #101015 !important;
+  background-color: #18181b !important;
   color: #ffffff !important;
   border-color: var(--accent) !important;
   box-shadow: 0 0 0 0.25rem rgba(255, 51, 68, 0.25) !important;
