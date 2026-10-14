@@ -11,7 +11,6 @@ import Contacto from './pages/Contacto';
 function App() {
   const [carrito, setCarrito] = useState([]);
 
-  // Función para agregar al carrito
   const agregarAlCarrito = (producto, cantidad = 1) => {
     setCarrito(prev => {
       const existe = prev.find(item => item.id === producto.id);
@@ -26,10 +25,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="d-flex flex-column min-vh-100">
         <Navbar carritoCount={carrito.reduce((acc, item) => acc + item.cantidad, 0)} />
         
-        <main>
+        <main className="flex-grow-1">
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />

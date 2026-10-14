@@ -1,30 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 function Navbar({ carritoCount }) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100 px-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark-custom border-bottom border-secondary w-100 px-3 py-3 sticky-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Nombre</Link>
-        <div className="collapse navbar-collapse show">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <Link className="navbar-brand fw-bold fs-4 text-accent tracking-widest text-uppercase" to="/">HARDGAMER</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto ms-4 mb-2 mb-lg-0 fw-semibold">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+              <NavLink className="nav-link" to="/">Inicio</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Carrito">Dashboard</Link>
+              <NavLink className="nav-link" to="/productos">Hardware</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Productos">Productos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/Contacto">Contacto</Link>
+              <NavLink className="nav-link" to="/contacto">Soporte</NavLink>
             </li>
           </ul>
-        <Link className="text-decoration-none" to = "Carrito">
-            <span className="navbar-text text-white">
-                🛒 Carrito: {carritoCount}
-            </span>
-        </Link>
-
+          <Link className="btn btn-outline-light d-flex align-items-center gap-2" to="/carrito">
+            <span>🛒</span> Carrito 
+            <span className="badge bg-accent text-white rounded-pill">{carritoCount}</span>
+          </Link>
         </div>
       </div>
     </nav>
