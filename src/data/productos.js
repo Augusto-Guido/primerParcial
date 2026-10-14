@@ -1,132 +1,14 @@
 export const productos = [
-    {
-        id: 1,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 2,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 3,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-        {
-        id: 4,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-        {
-        id: 5,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-        {
-        id: 6,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-        {
-        id: 7,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 8,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 9,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 10,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 11,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-        {
-        id: 12,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    },
-    {
-        id: 13,
-        nombre: "",
-        categoria: "",
-        precio: 2,
-        imagen: "",
-        descripcion: "",
-        stock: 0,
-        caracteristicas: []
-    }
-]
+  { id: 1, nombre: "Teclado Mecánico RGB Pro", categoria: "Teclados", precio: 85000, imagen: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&auto=format&fit=crop&q=60", descripcion: "Teclado mecánico con switches rojos e iluminación RGB personalizable.", stock: 25, caracteristicas: ["Switches Red", "RGB 16.8M", "Anti-Ghosting"] },
+  { id: 2, nombre: "Mouse Ultraligero 16K DPI", categoria: "Mice", precio: 42000, imagen: "https://images.unsplash.com/photo-1527814050087-379381547969?w=500&auto=format&fit=crop&q=60", descripcion: "Diseño ultraligero de 65g y sensor óptico de alta precisión.", stock: 40, caracteristicas: ["16000 DPI", "65 gramos", "6 botones"] },
+  { id: 3, nombre: "Auriculares 7.1 Surround", categoria: "Audio", precio: 65000, imagen: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500&auto=format&fit=crop&q=60", descripcion: "Sonido envolvente 7.1 y micrófono con cancelación de ruido.", stock: 0, caracteristicas: ["Sonido 7.1", "Micrófono desmontable", "USB"] }, // Sin stock de prueba
+  { id: 4, nombre: "Monitor Curvo 144Hz 24\"", categoria: "Monitores", precio: 210000, imagen: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&auto=format&fit=crop&q=60", descripcion: "Monitor curvo ideal para esports con tasa de refresco de 144Hz.", stock: 8, caracteristicas: ["144Hz", "Panel VA", "Curvatura 1500R"] },
+  { id: 5, nombre: "Mousepad Gaming XXL", categoria: "Accesorios", precio: 18000, imagen: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500&auto=format&fit=crop&q=60", descripcion: "Superficie de tela optimizada para velocidad y control.", stock: 30, caracteristicas: ["Base de goma", "Impermeable", "900x400mm"] },
+  { id: 6, nombre: "Micrófono USB Streaming", categoria: "Audio", precio: 95000, imagen: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=500&auto=format&fit=crop&q=60", descripcion: "Micrófono condensador con patrón polar cardioide para streaming.", stock: 12, caracteristicas: ["Patrón cardioide", "Control de volumen", "Plug & Play"] },
+  { id: 7, nombre: "Silla Gamer Ergonómica", categoria: "Sillas", precio: 280000, imagen: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500&auto=format&fit=crop&q=60", descripcion: "Silla reclinable con soporte lumbar y almohadones ajustables.", stock: 0, caracteristicas: ["Reclinable 180°", "Pistón Clase 4", "Estructura de acero"] }, // Sin stock de prueba
+  { id: 8, nombre: "Gamepad Inalámbrico PC/Mobile", categoria: "Accesorios", precio: 45000, imagen: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500&auto=format&fit=crop&q=60", descripcion: "Mando con vibración dual y batería de larga duración.", stock: 18, caracteristicas: ["Conexión Bluetooth", "Batería recargable", "Gatillos analógicos"] },
+  { id: 9, nombre: "Gabinete Gamer Vidrio Templado", categoria: "Hardware", precio: 99000, imagen: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500&auto=format&fit=crop&q=60", descripcion: "Excelente flujo de aire y panel lateral de vidrio templado.", stock: 7, caracteristicas: ["Incluye 3 coolers RGB", "Soporta refrigeración líquida", "USB 3.0"] },
+  { id: 10, nombre: "Placa de Video RTX 4060", categoria: "Hardware", precio: 550000, imagen: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=500&auto=format&fit=crop&q=60", descripcion: "Gráficos de alta potencia con arquitectura Ada Lovelace y DLSS 3.", stock: 4, caracteristicas: ["8GB GDDR6", "Ray Tracing", "DLSS 3"] },
+  { id: 11, nombre: "Auriculares In-Ear Gamer", categoria: "Audio", precio: 25000, imagen: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=500&auto=format&fit=crop&q=60", descripcion: "Auriculares compactos con micrófono dual ideal para portátiles.", stock: 22, caracteristicas: ["Micrófono en línea", "Drivers de 10mm", "Conector 3.5mm"] },
+  { id: 12, nombre: "Webcam Full HD 1080p", categoria: "Accesorios", precio: 52000, imagen: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60", descripcion: "Cámara web con enfoque automático y corrección de luz baja.", stock: 14, caracteristicas: ["Resolución 1080p", "Micrófono incorporado", "Clip universal"] }
+];

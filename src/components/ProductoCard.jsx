@@ -5,7 +5,10 @@ function ProductoCard({ producto, agregarAlCarrito }) {
 
   return (
     <div className="card h-100 bg-card-custom text-white border-secondary card-hover">
-      <div style={{ height: '200px', overflow: 'hidden' }} className="p-3">
+      <div style={{ height: '200px', overflow: 'hidden' }} className="p-3 position-relative">
+        {producto.stock === 0 && (
+          <span className="position-absolute top-0 start-0 m-3 badge bg-danger">Sin stock</span>
+        )}
         <img 
             src={producto.imagen} 
             className="card-img-top rounded h-100 w-100" 
@@ -24,8 +27,12 @@ function ProductoCard({ producto, agregarAlCarrito }) {
             <Link to={`/producto/${producto.id}`} className="btn btn-sm btn-outline-light me-2">
               Ver
             </Link>
-            <button onClick={() => agregarAlCarrito(producto)} className="btn btn-sm btn-accent fw-bold">
-              +
+            <button 
+              onClick={() => agregarAlCarrito(producto)} 
+              className={`btn btn-sm fw-bold ${producto.stock === 0 ? 'btn-secondary disabled' : 'btn-accent'}`}
+              disabled={producto.stock === 0}
+            >
+              {producto.stock === 0 ? 'No disponible' : '+'}
             </button>
           </div>
         </div>
