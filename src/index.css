@@ -1,35 +1,76 @@
 :root {
-  --text: #e0e0e0;
+  --text: #d1d5db;
   --text-h: #ffffff;
-  --bg: #121212;
-  --bg-card: #1e1e1e;
-  --accent: #ff4655; /* Rojo Gamer */
-  --accent-hover: #ff2a3b;
+  --bg: #0b0b0f;
+  --bg-card: #15151c;
+  --bg-card-hover: #1c1c24;
+  --border: #2a2a35;
+  --accent: #ff3344;
+  --accent-hover: #e02837;
   --sans: 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
+/* Forzar fondo oscuro en toda la estructura base */
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: var(--bg);
-  color: var(--text);
+  min-height: 100%;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
   font-family: var(--sans);
 }
 
-.bg-dark-custom { background-color: var(--bg) !important; }
-.bg-card-custom { background-color: var(--bg-card) !important; }
-.text-accent { color: var(--accent) !important; }
-.btn-accent { background-color: var(--accent); color: white; border: none; }
-.btn-accent:hover { background-color: var(--accent-hover); color: white; }
-.border-accent { border-color: var(--accent) !important; }
-
-/* Efecto hover en tarjetas */
-.card-hover { transition: transform 0.2s, box-shadow 0.2s; }
-.card-hover:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important; 
+#root {
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Clases de utilidad gamer */
+.bg-dark-custom { 
+  background-color: var(--bg) !important; 
+}
+
+.bg-card-custom { 
+  background-color: var(--bg-card) !important; 
+  border: 1px solid var(--border) !important;
+}
+
+.text-accent { 
+  color: var(--accent) !important; 
+}
+
+.btn-accent { 
+  background-color: var(--accent); 
+  color: white; 
+  border: none; 
+  transition: background-color 0.2s ease;
+}
+
+.btn-accent:hover { 
+  background-color: var(--accent-hover); 
+  color: white; 
+}
+
+.border-accent { 
+  border-color: var(--accent) !important; 
+}
+
+/* Efecto hover profesional para las tarjetas de hardware */
+.card-hover { 
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; 
+}
+
+.card-hover:hover { 
+  transform: translateY(-4px); 
+  background-color: var(--bg-card-hover) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 10px 25px rgba(255, 51, 68, 0.15) !important; 
+}
+
+/* Animación suave para los carteles flotantes de stock */
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
@@ -37,4 +78,18 @@ body {
 
 .animate-fade {
   animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Ajustes para que los formularios de Bootstrap combinen con el fondo oscuro */
+.form-control, .form-select {
+  background-color: #101015 !important;
+  color: #ffffff !important;
+  border-color: var(--border) !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #101015 !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 51, 68, 0.25) !important;
 }
