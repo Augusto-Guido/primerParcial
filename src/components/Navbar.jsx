@@ -1,10 +1,13 @@
 import { Link, NavLink } from 'react-router-dom';
+import logoViper from '../assets/logo.jpg';
 
 function Navbar({ carritoCount }) {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark-custom border-bottom border-secondary w-100 px-3 py-3 sticky-top">
-      <div className="container-fluid">
-        <Link className="navbar-brand fw-bold fs-4 text-accent tracking-widest text-uppercase" to="/">HARDGAMER</Link>
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark-custom border-bottom border-secondary w-100 px-3 py-3 sticky-top">
+            <div className="container-fluid">
+                <Link className="navbar-brand fw-bold fs-4 text-accent tracking-widest text-uppercase" to="/">
+                    <img src={logoViper} alt="Logo Viper" height="80" />
+                </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
