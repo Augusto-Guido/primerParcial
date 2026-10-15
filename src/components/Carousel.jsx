@@ -1,18 +1,8 @@
 function Carousel() {
     return (
         <div className="container my-4">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+            <div className="mb-3">
                 <h4 className="text-white fw-bold tracking-wide">DESTACADOS VIPER</h4>
-                <div className="d-flex gap-2">
-                    <button className="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselViper" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Anterior</span>
-                    </button>
-                    <button className="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselViper" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
             </div>
 
             {/* Contenedor principal del carrusel con altura controlada */}
@@ -27,7 +17,7 @@ function Carousel() {
                             alt="Setup Gamer RGB" 
                         />
                         <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
-                            <h5 className="text-white mb-0">Teclados Mecánicos de Competición</h5>
+                            <h5 className="text-white mb-0">Periféricos de Máxima Precisión</h5>
                         </div>
                     </div>
 
@@ -39,7 +29,7 @@ function Carousel() {
                             alt="Hardware de alta gama" 
                         />
                         <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
-                            <h5 className="text-white mb-0">Periféricos de Máxima Precisión</h5>
+                            <h5 className="text-white mb-0">Teclados Mecánicos de Competición</h5>
                         </div>
                     </div>
 
@@ -54,8 +44,15 @@ function Carousel() {
                             <h5 className="text-white mb-0">Tecnología de Nueva Generacion para tu Setup</h5>
                         </div>
                     </div>
-
                 </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselViper" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon  bg-opacity-50 rounded-circle p-3" aria-hidden="true"></span>
+                    <span className="visually-hidden">Anterior</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselViper" data-bs-slide="next">
+                    <span className="carousel-control-next-icon  bg-opacity-50 rounded-circle p-3" aria-hidden="true"></span>
+                    <span className="visually-hidden">Siguiente</span>
+                </button>
             </div>
         </div>
     );

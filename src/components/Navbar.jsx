@@ -22,6 +22,9 @@ function Navbar({ carritoCount }) {
             <li className="nav-item">
               <NavLink className="nav-link" to="/contacto">Soporte</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sobreNosotros">Sobre Nosotros</NavLink>
+            </li>
           </ul>
           <Link className="btn btn-outline-light d-flex align-items-center gap-2" to="/carrito">
             <span>🛒</span> Carrito 
