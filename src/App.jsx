@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Inicio from './pages/Inicio';
@@ -65,6 +66,7 @@ function App() {
             <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
             <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 
