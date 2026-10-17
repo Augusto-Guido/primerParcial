@@ -1,16 +1,37 @@
-# React + Vite
+# Nombre del proyecto
+ VIPER
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Descripción breve. 
+ Viper es una tienda online especializada en la venta de productos de computación y tecnología, diseñada para ofrecer a nuestros clientes una experiencia de compra cómoda, rápida y segura. Nuestro objetivo es acercarte todo lo que necesitás para equipar, mejorar y potenciar tu espacio tecnológico, ya sea para trabajar, estudiar, jugar o disfrutar de tus actividades favoritas.
 
-Currently, two official plugins are available:
+# Tecnologías utilizadas. 
+Tecnologias principales
+    HTML5
+    CSS
+    javaScript
+Herramientas de desarrollo
+    Git
+    VSC
+    Git Hub
+    Browsers
+    React-Bootstrap
+    React
+    Boostrap
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+# Instrucciones para instalar y correr el proyecto. 
+Debes tener:
+ instalado git en la pc
+ usuario de Git Hub
+ Instalado el VSC o algun motor de desarrollo similar
+ Instalar React react-Bootstrap y Bootstrap atravez de los npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Integrantes del grupo. 
+Imanol, Janse
+Ferrero, Facundo
+Guido, Augusto
+Salinas, Enzo
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# Capturas de pantalla, opcional.
+ 
+# Link al deploy, si lo realizaron. 
