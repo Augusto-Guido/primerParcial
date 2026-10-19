@@ -8,6 +8,7 @@ import Productos from './pages/Productos';
 import DetalleProducto from './pages/DetalleProducto';
 import Carrito from './pages/Carrito';
 import Contacto from './pages/Contacto';
+import SobreNosotros from './pages/SobreNosotros';
 import { productos } from './data/productos';
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
             <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
             <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/sobreNosotros" element={<SobreNosotros />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
