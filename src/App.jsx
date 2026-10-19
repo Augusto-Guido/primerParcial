@@ -8,6 +8,7 @@ import Productos from './pages/Productos';
 import DetalleProducto from './pages/DetalleProducto';
 import Carrito from './pages/Carrito';
 import Contacto from './pages/Contacto';
+import { productos } from './data/productos';
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -61,7 +62,7 @@ function App() {
         
         <main className="flex-grow-1">
           <Routes>
-            <Route path="/" element={<Inicio />} />
+            <Route path="/" element={<Inicio productos={productos} agregarAlCarrito={agregarAlCarrito} />} />
             <Route path="/productos" element={<Productos agregarAlCarrito={agregarAlCarrito} />} />
             <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
             <Route path="/carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
