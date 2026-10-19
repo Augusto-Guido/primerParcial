@@ -2,7 +2,7 @@ function Carousel() {
     return (
         <div className="container my-4">
             <div className="mb-3">
-                <h4 className="text-white fw-bold tracking-wide">DESTACADOS VIPER</h4>
+                <h4 className="text-white fw-bold tracking-wide"><span className="text-accent">EQUIPAMIENTO</span> DE ELITE</h4>
             </div>
 
             {/* Contenedor principal del carrusel con altura controlada */}
