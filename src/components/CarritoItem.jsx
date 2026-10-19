@@ -37,7 +37,7 @@ function CarritoItem({ item, setCarrito }) {
           <small className="text-secondary d-block">
             Precio unitario: ${item.precio.toLocaleString('es-AR')}
           </small>
-          <small className="text-muted">
+          <small>
             Disponibles: {item.stock} u.
           </small>
         </div>
