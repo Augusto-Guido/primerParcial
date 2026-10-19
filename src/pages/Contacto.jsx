@@ -4,6 +4,7 @@ function Contacto() {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
+    telefono: "",
     asunto: "Soporte Técnico",
     mensaje: "",
   });
@@ -20,6 +21,10 @@ function Contacto() {
 
     if (!formData.nombre.trim()) {
       newErrors.nombre = "El Nombre completo es obligatorio";
+    }
+
+    if (!formData.telefono.trim()) {
+      newErrors.telefono = "El teléfono es obligatorio";
     }
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,6 +47,7 @@ function Contacto() {
       setFormData({
         nombre: "",
         email: "",
+        telefono: "",
         asunto: "Soporte Técnico",
         mensaje: "",
       });
@@ -89,6 +95,19 @@ function Contacto() {
                 onChange={handleChange}
               />
               {errors.email && <div className="invalid-feedback d-block">{errors.email}</div>}
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label text-secondary fw-bold">Telefono *</label>
+              <input
+                type="tel"
+                className={`form-control bg-dark text-white border-secondary ${errors.telefono ? "is-invalid" : ""}`}
+                name="telefono"
+                value={formData.telefono}
+                onChange={handleChange}
+                placeholder="Ej: 1123456789"
+              />
+              {errors.telefono && <div className="invalid-feedback d-block">{errors.telefono}</div>}
             </div>
 
             <div className="mb-3">
