@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import ProductoCard from "../components/ProductoCard";
+import Ubicacion from '../components/Ubicacion';
 
 function Inicio({productos = [], agregarAlCarrito }) {
   const productosDestacados = productos.slice(7,10);
@@ -46,6 +47,7 @@ function Inicio({productos = [], agregarAlCarrito }) {
           </div>
         </section>
       )}
+      <Ubicacion />
     </div>
   );
 }
