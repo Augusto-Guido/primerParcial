@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import ProductoCard from "../components/ProductoCard";
 import Ubicacion from '../components/Ubicacion';
+import Beneficios from '../components/Beneficios';
 
 function Inicio({ productos = [], agregarAlCarrito }) {
   const productosDestacados = productos.slice(7, 10);
@@ -9,7 +10,7 @@ function Inicio({ productos = [], agregarAlCarrito }) {
   const productosConStock = productos.filter(p => p.stock > 0);
 
   const productosOferta = productosConStock.slice(0, 3).map((prod, index) => {
-    const descuentos = [10, 5, 15]; // 10% OFF, 5% OFF y 15% OFF
+    const descuentos = [10, 5, 15];
     return {
       ...prod,
       descuento: descuentos[index] || 10
@@ -29,7 +30,10 @@ function Inicio({ productos = [], agregarAlCarrito }) {
         <Carousel />
       </div>
 
-      {/* SECCIÓN DE OFERTAS RELÁMPAGO (Solo productos con stock) */}
+      {/* FRANJA DE BENEFICIOS */}
+      <Beneficios />
+
+      {/* SECCIÓN DE OFERTAS RELÁMPAGO */}
       {productosOferta.length > 0 && (
         <section className="my-5 text-start bg-card-custom p-4 p-md-5 rounded-4 border border-secondary shadow">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 pb-2 border-bottom border-secondary gap-2">
@@ -99,7 +103,7 @@ function Inicio({ productos = [], agregarAlCarrito }) {
         </section>
       )}
 
-      {/* SECCIÓN UBICACIÓN */}
+      {/* UBICACIÓN */}
       <Ubicacion />
     </div>
   );

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollTop from './components/ScrollTop';
+import BtnScrollTop from './components/BtnScrollTop';
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import DetalleProducto from './pages/DetalleProducto';
@@ -16,6 +18,7 @@ function App() {
     return savedCarrito ? JSON.parse(savedCarrito) : [];
   });
   const [alerta, setAlerta] = useState(null);
+
   useEffect(() => {
     localStorage.setItem('viper_carrito', JSON.stringify(carrito));
   }, [carrito]);
@@ -51,6 +54,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Resetea la posición del scroll a la parte superior al cambiar de página */}
+      <ScrollTop />
+
       <div className="d-flex flex-column min-vh-100 position-relative">
         
         {/* Cartel flotante de alerta */}
@@ -76,6 +82,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
+
+        {/* Botón flotante para subir que aparece al hacer scroll hacia abajo */}
+        <BtnScrollTop />
 
         <Footer />
       </div>
