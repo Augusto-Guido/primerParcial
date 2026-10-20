@@ -1,4 +1,6 @@
-:root {
+/* 1. Mantenemos tu tema oscuro original (Por defecto) */
+:root,
+[data-bs-theme="dark"] {
   --text: #d1d5db;
   --text-h: #ffffff;
   --bg: #0b0b0f;
@@ -7,10 +9,31 @@
   --border: #3f3f46;
   --accent: #ff3344;
   --accent-hover: #e02837;
-  --sans: 'Segoe UI', Roboto, sans-serif;
+  --sans: "Segoe UI", Roboto, sans-serif;
+
+  /* Variables extra para inputs y contornos oscuros */
+  --input-bg: #18181b;
+  --input-border: #52525b;
+  --btn-outline-text: #ffffff;
 }
 
-html, body {
+/* 2. Agregamos las variables para el modo claro */
+[data-bs-theme="light"] {
+  --text: #3f3f46; /* Gris oscuro para lectura */
+  --text-h: #09090b; /* Casi negro para títulos */
+  --bg: #f4f4f5; /* Fondo gris súper claro */
+  --bg-card: #ffffff; /* Tarjetas blancas */
+  --bg-card-hover: #fafafa; /* Efecto hover en tarjetas claras */
+  --border: #e4e4e7; /* Bordes grises suaves */
+
+  /* Variables extra para inputs y contornos claros */
+  --input-bg: #ffffff;
+  --input-border: #d4d4d8;
+  --btn-outline-text: #09090b;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -18,6 +41,9 @@ html, body {
   background-color: var(--bg) !important;
   color: var(--text) !important;
   font-family: var(--sans);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* Transición suave del fondo */
 }
 
 #root {
@@ -25,76 +51,91 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s ease;
 }
 
 /* Clases personalizadas */
-.bg-dark-custom { 
-  background-color: var(--bg) !important; 
+.bg-dark-custom {
+  background-color: var(--bg) !important;
 }
 
-.bg-card-custom { 
-  background-color: var(--bg-card) !important; 
+.bg-card-custom {
+  background-color: var(--bg-card) !important;
   border: 1px solid var(--border) !important;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.text-accent { 
-  color: var(--accent) !important; 
+.text-accent {
+  color: var(--accent) !important;
 }
 
 /* Botón de Agregar al Carrito (Rojo brillante con texto blanco visible siempre) */
-.btn-accent { 
-  background-color: var(--accent) !important; 
-  color: #ffffff !important; 
+.btn-accent {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
   border: 1px solid var(--accent) !important;
   font-weight: 600 !important;
   transition: background-color 0.2s ease;
 }
 
-.btn-accent:hover { 
-  background-color: var(--accent-hover) !important; 
-  color: #ffffff !important; 
+.btn-accent:hover {
+  background-color: var(--accent-hover) !important;
+  color: #ffffff !important;
 }
 
-/* Botones de contorno (como Ver detalle y Filtros) con bordes y textos claros */
+/* Botones de contorno (como Ver detalle y Filtros) con bordes y textos dinámicos */
 .btn-outline-light {
-  color: #ffffff !important;
-  border-color: #71717a !important;
+  color: var(--btn-outline-text) !important;
+  border-color: var(--input-border) !important;
 }
 
 .btn-outline-light:hover {
-  background-color: #ffffff !important;
-  color: #0b0b0f !important;
+  background-color: var(--btn-outline-text) !important;
+  color: var(--bg) !important;
 }
 
 /* Estilo para los botones de filtros de categoría */
 .btn-outline-secondary {
-  color: #f4f4f5 !important;
-  border-color: #52525b !important;
-  background-color: #18181b !important;
+  color: var(--text) !important;
+  border-color: var(--input-border) !important;
+  background-color: var(--input-bg) !important;
 }
 
-.btn-outline-secondary:hover, .btn-outline-secondary.active {
+.btn-outline-secondary:hover,
+.btn-outline-secondary.active {
   background-color: var(--accent) !important;
   color: #ffffff !important;
   border-color: var(--accent) !important;
 }
 
 /* Tarjetas */
-.card-hover { 
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; 
+.card-hover {
+  transition:
+    transform 0.2s ease,
+    background-color 0.3s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.card-hover:hover { 
-  transform: translateY(-4px); 
+.card-hover:hover {
+  transform: translateY(-4px);
   background-color: var(--bg-card-hover) !important;
   border-color: var(--accent) !important;
-  box-shadow: 0 10px 25px rgba(255, 51, 68, 0.15) !important; 
+  box-shadow: 0 10px 25px rgba(255, 51, 68, 0.15) !important;
 }
 
 /* Animación de alerta */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .animate-fade {
@@ -102,10 +143,14 @@ html, body {
 }
 
 /* Buscador y inputs perfectamente visibles */
-.form-control, .form-select {
-  background-color: #18181b !important;
-  color: #ffffff !important;
-  border: 1px solid #52525b !important;
+.form-control,
+.form-select {
+  background-color: var(--input-bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--input-border) !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .form-control::placeholder {
@@ -113,9 +158,10 @@ html, body {
   opacity: 1;
 }
 
-.form-control:focus, .form-select:focus {
-  background-color: #18181b !important;
-  color: #ffffff !important;
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--input-bg) !important;
+  color: var(--text) !important;
   border-color: var(--accent) !important;
   box-shadow: 0 0 0 0.25rem rgba(255, 51, 68, 0.25) !important;
 }

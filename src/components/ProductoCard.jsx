@@ -13,13 +13,13 @@ function ProductoCard({ producto, agregarAlCarrito }) {
   const handleAgregar = () => {
     agregarAlCarrito({
       ...producto,
-      precio: precioFinal
+      precio: precioFinal,
     });
   };
 
   return (
     <div
-      className="card h-100 bg-card-custom text-white border-secondary card-hover"
+      className="card h-100 bg-card-custom border-secondary card-hover"
       style={{ cursor: "pointer" }}
       onClick={() => navigate(`/producto/${producto.id}`)}
     >
@@ -31,10 +31,12 @@ function ProductoCard({ producto, agregarAlCarrito }) {
           <span className="position-absolute top-0 start-0 m-3 badge bg-danger z-1">
             Sin stock
           </span>
-        ) : tieneDescuento && (
-          <span className="position-absolute top-0 start-0 m-3 badge bg-danger fw-bold fs-6 shadow z-1">
-            🔥 {producto.descuento}% OFF
-          </span>
+        ) : (
+          tieneDescuento && (
+            <span className="position-absolute top-0 start-0 m-3 badge bg-danger fw-bold fs-6 shadow z-1">
+              🔥 {producto.descuento}% OFF
+            </span>
+          )
         )}
 
         <img

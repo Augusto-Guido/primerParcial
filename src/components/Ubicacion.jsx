@@ -1,6 +1,6 @@
 function Ubicacion() {
   return (
-    <div className="container my-5 text-white">
+    <div className="container my-5">
       <div className="text-center mb-4">
         <h2 className="fw-bold uppercase">
           VISITA NUESTRO <span className="text-accent">PUNTO DE RETIRO</span>
@@ -27,9 +27,9 @@ function Ubicacion() {
               ></iframe>
             </div>
             <div className="mt-3 text-center text-secondary small">
-              📍 Tte. Manuel Origone 151, B1688 Villa Tesei, Provincia de Buenos Aires — ⏰ Lunes a Sábados de 10:00 a 19:00 hs.
+              📍 Tte. Manuel Origone 151, B1688 Villa Tesei, Provincia de Buenos
+              Aires — ⏰ Lunes a Sábados de 10:00 a 19:00 hs.
             </div>
-
           </div>
         </div>
       </div>
