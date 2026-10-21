@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollTop from './components/ScrollTop';
+import BtnScrollTop from './components/BtnScrollTop';
 import Inicio from './pages/Inicio';
 import Productos from './pages/Productos';
 import DetalleProducto from './pages/DetalleProducto';
@@ -12,10 +13,16 @@ import SobreNosotros from './pages/SobreNosotros';
 import { productos } from './data/productos';
 
 function App() {
-  const [carrito, setCarrito] = useState([]);
-  const [alerta, setAlerta] = useState(null); // Estado para el cartel flotante
+  const [carrito, setCarrito] = useState(() => {
+    const savedCarrito = localStorage.getItem('viper_carrito');
+    return savedCarrito ? JSON.parse(savedCarrito) : [];
+  });
+  const [alerta, setAlerta] = useState(null);
 
-  // Función para mostrar la alerta y ocultarla sola después de 3 segundos
+  useEffect(() => {
+    localStorage.setItem('viper_carrito', JSON.stringify(carrito));
+  }, [carrito]);
+
   const mostrarAlerta = (mensaje) => {
     setAlerta(mensaje);
     setTimeout(() => {
@@ -47,9 +54,12 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Resetea la posición del scroll a la parte superior al cambiar de página */}
+      <ScrollTop />
+
       <div className="d-flex flex-column min-vh-100 position-relative">
         
-        {/* Cartel flotante en el centro de la pantalla */}
+        {/* Cartel flotante de alerta */}
         {alerta && (
           <div 
             className="position-fixed top-50 start-50 translate-middle p-4 rounded-4 shadow-lg text-white fw-bold text-center fs-5 border border-accent bg-dark-custom z-3 animate-fade"
@@ -72,6 +82,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
+
+        {/* Botón flotante para subir que aparece al hacer scroll hacia abajo */}
+        <BtnScrollTop />
 
         <Footer />
       </div>

@@ -9,19 +9,16 @@ export const estadisticas = [
 export const valores = [
     {
       id: 1,
-      icon: '🚀',
       title: 'Alto Rendimiento',
       description: 'Seleccionamos solo componentes probados y evaluados para garantizar máxima potencia en tus armados.'
     },
     {
       id: 2,
-      icon: '🛡️',
       title: 'Garantía Directa',
       description: 'Todos nuestros productos cuentan con garantía oficial y soporte postventa especializado.'
     },
     {
       id: 3,
-      icon: '⚡',
       title: 'Envíos Rápidos',
       description: 'Despachamos en el día para que no tengas que esperar para armar o actualizar tu setup.'
     }

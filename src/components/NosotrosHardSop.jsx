@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function MasCosas() {
+function NosotrosHardSop() {
   return (
     <div className="my-5 p-5 bg-dark-custom border border-secondary rounded-4 text-center shadow-lg">
           <h2 className="fw-bold mb-3">¿Listo para armar o mejorar tu PC?</h2>
@@ -20,4 +20,4 @@ function MasCosas() {
   )
 }
 
-export default MasCosas;
+export default NosotrosHardSop;
