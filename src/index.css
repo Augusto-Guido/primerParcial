@@ -1,4 +1,3 @@
-/* 1. Mantenemos tu tema oscuro original (Por defecto) */
 :root,
 [data-bs-theme="dark"] {
   --text: #d1d5db;
@@ -17,7 +16,6 @@
   --btn-outline-text: #ffffff;
 }
 
-/* 2. Agregamos las variables para el modo claro */
 [data-bs-theme="light"] {
   --text: #3f3f46; /* Gris oscuro para lectura */
   --text-h: #09090b; /* Casi negro para títulos */
@@ -54,7 +52,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Clases personalizadas */
 .bg-dark-custom {
   background-color: var(--bg) !important;
 }
@@ -71,7 +68,6 @@ body {
   color: var(--accent) !important;
 }
 
-/* Botón de Agregar al Carrito (Rojo brillante con texto blanco visible siempre) */
 .btn-accent {
   background-color: var(--accent) !important;
   color: #ffffff !important;
@@ -85,7 +81,6 @@ body {
   color: #ffffff !important;
 }
 
-/* Botones de contorno (como Ver detalle y Filtros) con bordes y textos dinámicos */
 .btn-outline-light {
   color: var(--btn-outline-text) !important;
   border-color: var(--input-border) !important;
@@ -96,7 +91,6 @@ body {
   color: var(--bg) !important;
 }
 
-/* Estilo para los botones de filtros de categoría */
 .btn-outline-secondary {
   color: var(--text) !important;
   border-color: var(--input-border) !important;
@@ -110,7 +104,6 @@ body {
   border-color: var(--accent) !important;
 }
 
-/* Tarjetas */
 .card-hover {
   transition:
     transform 0.2s ease,
@@ -142,7 +135,6 @@ body {
   animation: fadeIn 0.25s ease-out forwards;
 }
 
-/* Buscador y inputs perfectamente visibles */
 .form-control,
 .form-select {
   background-color: var(--input-bg) !important;

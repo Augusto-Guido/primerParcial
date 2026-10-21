@@ -4,7 +4,6 @@ function BotonTema() {
   const [tema, setTema] = useState(localStorage.getItem("tema") || "dark");
 
   useEffect(() => {
-    // Esto le dice a Bootstrap que cambie TODOS sus colores internos
     document.documentElement.setAttribute("data-bs-theme", tema);
     localStorage.setItem("tema", tema);
   }, [tema]);
@@ -14,8 +13,20 @@ function BotonTema() {
   };
 
   return (
-    <button onClick={toggleTema} className="btn btn-secondary rounded-circle">
-      {tema === "dark" ? "☀️" : "🌙"}
+    <button
+      onClick={toggleTema}
+      className="btn btn-outline-secondary d-flex align-items-center gap-2 px-3 rounded-pill"
+      style={{ transition: "all 0.3s ease" }}
+    >
+      {tema === "dark" ? (
+        <>
+          <span className="fs-5">☼</span>
+        </>
+      ) : (
+        <>
+          <span className="fs-5">☾</span>
+        </>
+      )}
     </button>
   );
 }
