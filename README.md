@@ -76,4 +76,4 @@ Para clonar y ejecutar este proyecto de forma local en tu computadora, asegúrat
 
 ## 🔗 Link al Deploy
 
-* **Sitio Web:** 
+* **Sitio Web:** *https://parcial-ciu.vercel.app*

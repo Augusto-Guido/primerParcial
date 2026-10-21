@@ -1,4 +1,3 @@
-import React from 'react'
 import NosotrosHardSop from '../components/NosotrosHardSop';
 import NosotrosCard from '../components/NosotrosCard';
 import NosotrosPorQue from '../components/NosotrosPorQue';
