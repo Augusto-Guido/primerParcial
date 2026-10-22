@@ -33,9 +33,12 @@ function Carrito({ carrito, setCarrito }) {
   const handleConfirmarCompra = (e) => {
     e.preventDefault();
     const newErrors = {};
-
-    if (!formData.nombre.trim())
-      newErrors.nombre = "El Nombre y Apellido es obligatorio";
+    const letrasValidas = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/i;
+    const nroTelefonoValido = /^[0-9]+$/i;
+    
+    if (!letrasValidas.test(formData.nombre.trim())) {
+      newErrors.nombre = "El Nombre y Apellido es obligatorio y debe contener solo letras y espacios";
+    }
 
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
@@ -44,8 +47,9 @@ function Carrito({ carrito, setCarrito }) {
       newErrors.email = "Email no válido";
     }
 
-    if (!formData.telefono.trim())
-      newErrors.telefono = "El Teléfono es obligatorio";
+    if (!nroTelefonoValido.test(formData.telefono.trim())) {
+      newErrors.telefono = "El Teléfono es obligatorio y debe contener solo números";
+    }
     if (!formData.direccion.trim())
       newErrors.direccion = "La Dirección o Localidad es obligatoria";
 
