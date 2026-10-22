@@ -64,7 +64,7 @@ function Navbar({ carritoCount }) {
               to="/carrito"
             >
               <span>🛒</span> Carrito
-              <span className="badge bg-accent rounded-pill">
+              <span className="badge bg-accent rounded-pill text-body">
                 {carritoCount}
               </span>
             </Link>
